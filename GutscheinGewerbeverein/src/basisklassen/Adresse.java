@@ -8,49 +8,33 @@ public class Adresse {
 	private int plz;
 	private String ort;
 	
-	public void neueAdresse() {
-		Scanner sc = new Scanner (System.in);
-		
-		System.out.println("**START ERFASSUNG EINER NEUEN ADRESSE**");
-		
-		//Strasse einlesen
-		System.out.println("Bitte Strassenname eingeben: ");
-		strasse = sc.next();
-		
-		//Hausnummer einlesen
-		System.out.println("Bitte Hausnnummer eingeben: ");
-		hausnummer = sc.nextInt();
-		
-		//Postleitzahl einlesen
-		System.out.println("Bitte Postleitzahl eingeben: ");
-		plz = sc.nextInt();
-		
-		//Ortsname einlesen
-		System.out.println("Bitte Ortsname eingeben: ");
-		ort = sc.next();	
-			
-			System.out.println("**ADRESSE ERFOLGREICH ERFASST**");
 	
+//---------------------------- KONSTRUKTOR ----------------------------	
+	public Adresse(String strasse, int hausnummer, int plz, String ort) {
+		super();
+		this.strasse = strasse;
+		this.hausnummer = hausnummer;
+		this.plz = plz;
+		this.ort = ort;
+	}
+	
+//---------------------------- TO-STRING METHODE ----------------------------	
+	@Override
+	public String toString() {
+		return (strasse + " " + hausnummer + ", " + plz + " " + ort);
 	}
 	
 	
-	
+//---------------------------- GET METHODEN ----------------------------
 	public String getStrasse() {
 		return strasse;
 	}
-	
-	public void setStrasse(String strasse) {
-		this.strasse = strasse;
-	}
-	
 	public int getHausnummer() {
 		return hausnummer;
 	}
-	
 	public int getPlz() {
 		return plz;
 	}
-	
 	public String getOrt() {
 		return ort;
 	}
